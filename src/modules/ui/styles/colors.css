@@ -1,0 +1,60 @@
+@theme {
+  /* Neutrals */
+  --ds-color-neutral-600: #1b253c;
+  --ds-color-neutral-500: #202c46;
+  --ds-color-neutral-400: #4d566b;
+  --ds-color-neutral-300: #9096a2;
+  --ds-color-neutral-200: #d1d4db;
+  --ds-color-neutral-100: #e9eaec;
+  --ds-color-neutral-50: #f4f4f6;
+  --ds-color-neutral-0: #ffffff;
+
+  /* Blues */
+  --ds-color-blue-700: #2240a4;
+  --ds-color-blue-600: #2a4ec7;
+  --ds-color-blue-500: #315cea;
+  --ds-color-blue-400: #5a7dee;
+  --ds-color-blue-300: #adbef7;
+  --ds-color-blue-200: #eaeffd;
+  --ds-color-blue-100: #f5f7fe;
+
+  /* Purples */
+  --ds-color-purple-600: #64368f;
+  --ds-color-purple-500: #773fe2;
+  --ds-color-purple-400: #9265e8;
+  --ds-color-purple-300: #c9b2f3;
+  --ds-color-purple-200: #f1ecfc;
+  --ds-color-purple-100: #f8f5fe;
+
+  /* Magentas */
+  --ds-color-magenta-600: #c24764;
+  --ds-color-magenta-500: #e35275;
+  --ds-color-magenta-400: #e97591;
+  --ds-color-magenta-300: #f4bac8;
+  --ds-color-magenta-200: #fceef1;
+  --ds-color-magenta-100: #fef6f8;
+
+  /* Greens */
+  --ds-color-green-600: #21a552;
+  --ds-color-green-500: #27ce60;
+  --ds-color-green-400: #52d880;
+  --ds-color-green-300: #a9ebbf;
+  --ds-color-green-200: #e9faef;
+  --ds-color-green-100: #f4fdf7;
+
+  /* Reds */
+  --ds-color-red-600: #b71f3b;
+  --ds-color-red-500: #df2648;
+  --ds-color-red-400: #e9677f;
+  --ds-color-red-300: #f2a6b4;
+  --ds-color-red-200: #f9d2d9;
+  --ds-color-red-100: #fce9ec;
+
+  /* Yellows */
+  --ds-color-yellow-600: #c77414;
+  --ds-color-yellow-500: #f89118;
+  --ds-color-yellow-400: #fab261;
+  --ds-color-yellow-300: #fccf9c;
+  --ds-color-yellow-200: #fde7cd;
+  --ds-color-yellow-100: #fef3e6;
+}
