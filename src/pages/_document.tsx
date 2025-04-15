@@ -1,4 +1,3 @@
-import { jsonLd } from "@/config/seo";
 import Document, {
   Html,
   Head,
@@ -7,6 +6,8 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document";
+import { jsonLd } from "../config/seo";
+import { getFonts } from "./fonts";
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -27,15 +28,20 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pt-br">
         <Head>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="HandheldFriendly" content="True" />
+          <meta httpEquiv="cleartype" content="on" />
         </Head>
         <body>
-          <Main />
+          <main className={getFonts()}>
+            <Main />
+          </main>
           <NextScript />
         </body>
       </Html>

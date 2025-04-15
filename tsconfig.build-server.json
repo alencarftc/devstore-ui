@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": false,
+    "module": "CommonJS",
+    "target": "ES2019",
+    "isolatedModules": false,
+    "incremental": true,
+    "outDir": "./dist",
+    "rootDir": "./main"
+  },
+  "include": ["main/server"],
+  "exclude": ["./dist", "*.test.ts", "*.test.tsx"]
+}
