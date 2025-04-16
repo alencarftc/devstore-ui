@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { Breadcrumbs } from ".";
+import { Breadcrumb } from ".";
 
-describe("<Breadcrumbs />", () => {
+describe("<Breadcrumb />", () => {
   it("should render an unique path successfully", () => {
     // arrange
-    const pathes = [{ href: "/notifications", label: "Notifications" }];
+    const pathes = [{ href: "/profile", label: "Profile" }];
 
     // act
-    render(<Breadcrumbs pathes={pathes} />);
+    render(<Breadcrumb pathes={pathes} />);
     const linkEls = screen.getAllByRole("link");
 
     // assert
@@ -24,7 +24,7 @@ describe("<Breadcrumbs />", () => {
     ];
 
     // act
-    render(<Breadcrumbs pathes={pathes} />);
+    render(<Breadcrumb pathes={pathes} />);
     const linkEls = screen.getAllByRole("link");
 
     // assert

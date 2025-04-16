@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 
-export type BreadcrumbsProps = {
+export type BreadcrumbProps = {
   pathes: Array<{
     label: string;
     href: string;
   }>;
 };
 
-export const Breadcrumbs = ({ pathes = [] }: BreadcrumbsProps) => (
+export const Breadcrumb = ({ pathes = [] }: BreadcrumbProps) => (
   <nav aria-label="Breadcrumb">
     <ol className="flex">
       {pathes.map((path, index) => {

@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
     webpackBuildWorker: true,
     webpackMemoryOptimizations: true,
   },
+  i18n: {
+    locales: ["en-US", "pt-BR", "es-NL"],
+    defaultLocale: "pt-BR",
+  },
   headers: async () => [
     {
       source: "/manifest.json",

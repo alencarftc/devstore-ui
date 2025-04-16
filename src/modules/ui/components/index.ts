@@ -1,2 +1,2 @@
-export * from "./Breadcumbs";
+export * from "./Breadcrumb";
 export * from "./Typography";

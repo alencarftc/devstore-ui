@@ -1,7 +1,7 @@
-import { Breadcrumbs } from "@/modules/ui/components";
+import { Breadcrumb } from "@/modules/ui/components";
 
 export default () => (
-  <Breadcrumbs
+  <Breadcrumb
     pathes={[
       {
         href: "/teste",
