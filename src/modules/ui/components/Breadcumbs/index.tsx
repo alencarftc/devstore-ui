@@ -1,49 +1,39 @@
 /** Roadmap component (Figma) */
 
 import Link from "next/link";
-import { Typography } from "../Typography";
-import { usePathname } from "next/navigation";
 
-type ExpectedPathes = "clothes";
-
-type ExpectedPage = {
-  label: string;
-  href: string;
+export type BreadcrumbsProps = {
+  pathes: Array<{
+    label: string;
+    href: string;
+  }>;
 };
 
-const BREADCRUMB_PATH_PAGES: Record<ExpectedPathes, ExpectedPage> = {
-  clothes: {
-    label: "Clothes",
-    href: "/clothes",
-  },
-};
+export const Breadcrumbs = ({ pathes = [] }: BreadcrumbsProps) => (
+  <nav aria-label="Breadcrumb">
+    <ol className="flex">
+      {pathes.map((path, index) => {
+        const isActual = index + 1 === pathes.length;
 
-export const Breadcrumbs = ({ actual }: { actual: string }) => {
-  const pathname = usePathname();
-  const breadcrumbs = pathname?.split("/");
+        return (
+          <li key={path.label} className="flex-initial">
+            <Link
+              href={path.href}
+              style={{ color: isActual ? "#000000" : "#00000080" }}
+              aria-current={isActual ? "page" : null}
+              className="pt-1 pb-1 pl-3 pr-3 hover:underline"
+            >
+              {path.label}
+            </Link>
 
-  if (breadcrumbs.length === 0) return <></>;
-
-  return (
-    <nav aria-label="Breadcrumb">
-      <ol>
-        {breadcrumbs.map((link) => {
-          const breadcrumb = BREADCRUMB_PATH_PAGES[link as ExpectedPathes];
-
-          return (
-            <>
-              <li key={breadcrumb.label}>
-                <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
-              </li>
-              <li>
-                <Typography tag="span" aria-current="page">
-                  {actual}
-                </Typography>
-              </li>
-            </>
-          );
-        })}
-      </ol>
-    </nav>
-  );
-};
+            {!isActual && (
+              <span style={{ color: "#00000080" }} className="cursor-default">
+                /
+              </span>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+);

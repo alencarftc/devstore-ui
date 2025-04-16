@@ -1,21 +1,39 @@
 import { render, screen } from "@testing-library/react";
 import { Breadcrumbs } from ".";
-import { MemoryRouter } from "react-router-dom";
 
 describe("<Breadcrumbs />", () => {
-  it("it should render", () => {
+  it("should render an unique path successfully", () => {
+    // arrange
+    const pathes = [{ href: "/notifications", label: "Notifications" }];
+
     // act
-    render(
-      <MemoryRouter
-        basename="/aloha"
-        initialEntries={["/account/preferences/notifications"]}
-      >
-        <Breadcrumbs actual={"Notifications"} />
-      </MemoryRouter>
-    );
-    const breadcrumbEls = screen.getByRole("listitem");
+    render(<Breadcrumbs pathes={pathes} />);
+    const linkEls = screen.getAllByRole("link");
 
     // assert
-    expect(breadcrumbEls).toBe(["Account", "Preferences", "Notifications"]);
+    expect(linkEls[0].textContent).toBe(pathes[0].label);
+    expect(linkEls[0].getAttribute("href")).toBe(pathes[0].href);
+    expect(linkEls[0].getAttribute("aria-current")).toBe("page");
+  });
+
+  it("should render multiple pathes successfully", () => {
+    // arrange
+    const pathes = [
+      { href: "/profile", label: "Profile" },
+      { href: "/profile/notifications", label: "Notifications" },
+    ];
+
+    // act
+    render(<Breadcrumbs pathes={pathes} />);
+    const linkEls = screen.getAllByRole("link");
+
+    // assert
+    expect(linkEls[0].textContent).toBe(pathes[0].label);
+    expect(linkEls[0].getAttribute("href")).toBe(pathes[0].href);
+    expect(linkEls[0].getAttribute("aria-current")).toBe(null);
+
+    expect(linkEls[1].textContent).toBe(pathes[1].label);
+    expect(linkEls[1].getAttribute("href")).toBe(pathes[1].href);
+    expect(linkEls[1].getAttribute("aria-current")).toBe("page");
   });
 });
